@@ -2,3 +2,19 @@ application:
   parseSiteUrl: https://www.radon.ru/online-map/?city=6
   xPath: //div[@class='default-bottom-banner']/script[@type='text/javascript']
 
+server:
+  port: 8080
+spring:
+  banner:
+    location: logo.txt
+  kafka:
+    bootstrap-servers: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: nuclear.bot.parsing.agent.radon.core.config.MessageAdapter
+      properties:
+        key-class: java.lang.String
+        value-class: nuclear.bot.core.dto.AgentMessage
+    template:
+      default-topic: parser-event
+
