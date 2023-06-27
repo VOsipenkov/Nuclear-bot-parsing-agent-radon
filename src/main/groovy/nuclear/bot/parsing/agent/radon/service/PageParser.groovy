@@ -1,14 +1,11 @@
 package nuclear.bot.parsing.agent.radon.service
 
-import lombok.extern.slf4j.Slf4j
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
 import org.springframework.stereotype.Service
 import us.codecraft.xsoup.Xsoup
 
 import java.util.logging.Logger
 
-@Slf4j
 @Service
 class PageParser {
     Logger logger = Logger.getLogger(getClass().name)
