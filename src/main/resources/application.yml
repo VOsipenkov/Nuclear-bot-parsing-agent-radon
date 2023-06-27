@@ -1,0 +1,4 @@
+application:
+  parseSiteUrl: https://www.radon.ru/online-map/?city=6
+  xPath: //div[@class='default-bottom-banner']/script[@type='text/javascript']
+
