@@ -31,7 +31,7 @@ class ParsingService {
     @Scheduled(fixedRate = 10_000)
     void parse() {
         def values = pageParser.getContent(url, xPath)
-        logger.info "Parsed values ${values}"
+        logger.info "Parsed values"
         sendMessage(values)
     }
 
