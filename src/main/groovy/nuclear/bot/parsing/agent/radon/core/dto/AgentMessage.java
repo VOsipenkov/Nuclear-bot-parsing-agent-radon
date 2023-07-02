@@ -1,4 +1,3 @@
-
 package nuclear.bot.parsing.agent.radon.core.dto;
 
 import com.fasterxml.jackson.annotation.*;

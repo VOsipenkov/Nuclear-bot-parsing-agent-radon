@@ -11,7 +11,7 @@ spring:
     bootstrap-servers: my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: nuclear.bot.parsing.agent.radon.core.config.MessageAdapter
+      value-serializer: nuclear.bot.parsing.agent.radon.core.dto.MessageAdapter
       properties:
         key-class: java.lang.String
         value-class: nuclear.bot.core.dto.AgentMessage
