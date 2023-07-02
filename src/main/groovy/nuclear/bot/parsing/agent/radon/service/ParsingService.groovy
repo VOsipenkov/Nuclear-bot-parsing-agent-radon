@@ -1,6 +1,5 @@
 package nuclear.bot.parsing.agent.radon.service
 
-import lombok.RequiredArgsConstructor
 import nuclear.bot.parsing.agent.radon.core.dto.AgentMessage
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -17,6 +16,8 @@ class ParsingService {
     private String url
     @Value('${application.xPath}')
     private String xPath
+    @Value('${spring.kafka.template.default-topic}')
+    private String topicName
     Logger logger = Logger.getLogger(getClass().name)
     private final PageParser pageParser
     private final KafkaTemplate<String, AgentMessage> kafkaTemplate
@@ -31,9 +32,11 @@ class ParsingService {
     void parse() {
         def values = pageParser.getContent(url, xPath)
         logger.info "Parsed values ${values}"
+        sendMessage(values)
     }
 
-    void sendMessage(List<String> values) {
-
+    void sendMessage(List<AgentMessage> messages) {
+        messages.each { message -> kafkaTemplate.send(topicName, message) }
+        logger.info "Send ${messages?.size()} messages"
     }
 }
