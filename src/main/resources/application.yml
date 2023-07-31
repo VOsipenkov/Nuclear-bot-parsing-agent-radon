@@ -17,4 +17,3 @@ spring:
         value-class: nuclear.bot.parsing.agent.radon.core.dto.AgentMessage
     template:
       default-topic: parser-event
-
