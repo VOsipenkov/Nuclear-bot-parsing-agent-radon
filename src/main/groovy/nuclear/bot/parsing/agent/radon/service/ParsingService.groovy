@@ -28,7 +28,7 @@ class ParsingService {
         this.kafkaTemplate = kafkaTemplate
     }
 
-    @Scheduled(fixedRate = 10_000)
+    @Scheduled(fixedRate = 60_000)
     void parse() {
         def values = pageParser.getContent(url, xPath)
         logger.info "Parsed values"

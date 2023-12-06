@@ -33,6 +33,7 @@ dependencies {
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
 	implementation 'org.jsoup:jsoup:1.16.1'
 	implementation 'us.codecraft:xsoup:0.3.7'
 }
