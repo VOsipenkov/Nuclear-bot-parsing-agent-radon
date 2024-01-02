@@ -3,7 +3,7 @@ package nuclear.bot.parsing.agent.radon.service
 import nuclear.bot.parsing.agent.radon.core.dto.AgentMessage
 import org.springframework.stereotype.Service
 
-import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 @Service
 class String2AgentMessageMapper {
@@ -14,7 +14,7 @@ class String2AgentMessageMapper {
         def agentMessage = new AgentMessage()
         agentMessage.message=value
         agentMessage.parserAgentName = PARSER_AGENT_NAME
-        agentMessage.messageDateTime = LocalDateTime.now()
+        agentMessage.messageDateTime = OffsetDateTime.now().toString()
         return agentMessage
     }
 

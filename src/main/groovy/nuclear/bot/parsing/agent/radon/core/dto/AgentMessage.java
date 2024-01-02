@@ -3,6 +3,7 @@ package nuclear.bot.parsing.agent.radon.core.dto;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.annotation.processing.Generated;
+import java.time.OffsetDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
