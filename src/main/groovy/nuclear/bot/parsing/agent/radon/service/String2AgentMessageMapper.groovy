@@ -8,7 +8,7 @@ import java.time.OffsetDateTime
 @Service
 class String2AgentMessageMapper {
 
-    private final String PARSER_AGENT_NAME = "don.ru/online-map/"
+    private final String PARSER_AGENT_NAME = "https://www.radon.ru/online-map/?city=6"
 
     def map(String value){
         def agentMessage = new AgentMessage()
