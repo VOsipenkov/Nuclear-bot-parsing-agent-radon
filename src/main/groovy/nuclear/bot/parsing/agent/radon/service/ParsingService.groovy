@@ -14,8 +14,6 @@ class ParsingService {
 
     @Value('${application.parseSiteUrl}')
     private String url
-    @Value('${application.xPath}')
-    private String xPath
     @Value('${spring.kafka.template.default-topic}')
     private String topicName
     Logger logger = Logger.getLogger(getClass().name)
@@ -30,7 +28,7 @@ class ParsingService {
 
     @Scheduled(fixedRate = 60_000)
     void parse() {
-        def values = pageParser.getContent(url, xPath)
+        def values = pageParser.getContent(url)
         logger.info "Parsed values"
         sendMessage(values)
     }
